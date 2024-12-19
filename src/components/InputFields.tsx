@@ -1,7 +1,6 @@
 import React from 'react';
 import inputsConfigs from '../configs/inputsConfigs';
 import Box from '@mui/system/Box';
-import TextField from '@mui/material/TextField';
 
 type InputFieldsProps = {
   formValues: Record<string, string>;
@@ -12,17 +11,15 @@ type InputFieldsProps = {
 const InputFields: React.FC<InputFieldsProps> = ({ formValues, errors, handleInputChange }) => {
   return (
     <>
-      {inputsConfigs.map((input) => (
-        <Box key={input.id} sx={{ width: '100%' }}>
-          <TextField
-            variant="outlined"
-            id={input.id}
-            value={formValues[input.id] || ''}
-            label={input.placeholder}
-            onChange={(e) => handleInputChange(input.id, e.target.value)}
-            error={!!errors[input.id]}
-            helperText={errors[input.id]}
-            fullWidth
+      {inputsConfigs.map(({ id, Component, placeholder }) => (
+        <Box key={id} sx={{ width: '100%' }}>
+          <Component
+            id={id}
+            value={formValues[id] || ''}
+            placeholder={placeholder}
+            onChange={(e) => handleInputChange(id, e.target.value)}
+            error={!!errors[id]}
+            helperText={errors[id]}
           />
         </Box>
       ))}
