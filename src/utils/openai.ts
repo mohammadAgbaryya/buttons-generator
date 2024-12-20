@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { sanitizeInput } from '.';
 
-const OPEN_AI_ENDPOINT = 'https://api.openai.com/v1/completions';
+const OPEN_AI_ENDPOINT = 'https://api.openai.com/v1/test';
 
 export const generateStyledButton = async (inputs: string): Promise<string> => {
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY;

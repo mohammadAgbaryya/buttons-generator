@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
+import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 
 type GenerateButtonProps = {
   loading: boolean;
@@ -15,11 +16,17 @@ const GenerateButtonProps: React.FC<GenerateButtonProps> = ({ loading, onClick, 
       color="primary"
       onClick={onClick}
       disabled={disabled || loading}
-      startIcon={loading ? <CircularProgress size={20} color="inherit" /> : undefined}
-      sx={{ textTransform: 'none', padding: 1, fontSize: 24 }}
+      startIcon={
+        loading ? (
+          <CircularProgress size={20} color="inherit" />
+        ) : (
+          <SettingsSuggestIcon style={{ fontSize: 28 }} />
+        )
+      }
+      sx={{ padding: 1, fontSize: 24, fontFamily: 'Spicy Rice' }}
       fullWidth
     >
-      {loading ? 'Loading...' : 'Generate'}
+      {loading ? 'Generating...' : 'Generate'}
     </Button>
   );
 };
