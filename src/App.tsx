@@ -3,10 +3,14 @@ import ButtonGenerator from './components/ButtonGenerator';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Box from '@mui/material/Box';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import customTheme from './theme';
 
 const App: React.FC = () => {
   return (
-    <>
+    <ThemeProvider theme={customTheme}>
+      {/* CssBaseline applies global resets */}
+      <CssBaseline />
       <Box
         sx={{
           display: 'flex',
@@ -28,7 +32,7 @@ const App: React.FC = () => {
         </Box>
         <Footer />
       </Box>
-    </>
+    </ThemeProvider>
   );
 };
 

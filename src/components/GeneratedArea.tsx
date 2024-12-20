@@ -70,7 +70,7 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
         )
       ) : (
         <Typography
-          variant="body2"
+          variant="body1"
           sx={{
             ...placeholderStyles,
             color: '#888',

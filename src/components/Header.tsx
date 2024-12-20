@@ -3,19 +3,19 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import { Face } from '@mui/icons-material';
+import SmartButtonIcon from '@mui/icons-material/SmartButton';
 
 const Header: React.FC = () => {
   return (
     <AppBar position="static" sx={{ width: '100%' }}>
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="logo">
-          <Face />
+          <SmartButtonIcon sx={{ fontSize: 64, color: '#74b9ff' }} />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Spicy Rice' }}>
           BUTTONS GENERATOR
         </Typography>
-        <Typography variant="body1" color="inherit" sx={{ marginRight: 2 }}>
+        <Typography variant="h5" color="inherit" sx={{ marginRight: 2 }}>
           Hey there, welcome!
         </Typography>
       </Toolbar>

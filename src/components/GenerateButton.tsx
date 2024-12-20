@@ -16,7 +16,7 @@ const GenerateButtonProps: React.FC<GenerateButtonProps> = ({ loading, onClick, 
       onClick={onClick}
       disabled={disabled || loading}
       startIcon={loading ? <CircularProgress size={20} color="inherit" /> : undefined}
-      sx={{ textTransform: 'none', padding: 2 }}
+      sx={{ textTransform: 'none', padding: 1, fontSize: 24 }}
       fullWidth
     >
       {loading ? 'Loading...' : 'Generate'}
