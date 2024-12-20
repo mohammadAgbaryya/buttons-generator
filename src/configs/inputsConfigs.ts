@@ -1,27 +1,11 @@
-import TextField from '../components/core/TextField';
+import InputConfig from '../models/InputConfig';
+import Mode from '../models/Mode';
+import advancedConfigs from './advancedConfigs';
+import simpleConfigs from './simpleConfigs';
 
-const inputsConfigs = [
-  {
-    id: 'color',
-    name: 'Color',
-    Component: TextField,
-    placeholder: "Enter a color (e.g., 'red')",
-    validator: (value: string) => (value ? '' : 'Color is required'),
-  },
-  {
-    id: 'size',
-    name: 'Size',
-    Component: TextField,
-    placeholder: "Enter a size (e.g., 'large')",
-    validator: (value: string) => (value ? '' : 'Size is required'),
-  },
-  {
-    id: 'text',
-    name: 'Button Text',
-    Component: TextField,
-    placeholder: 'Enter button text',
-    validator: (value: string) => (value ? '' : 'Text is required'),
-  },
-];
+const inputsConfigs: Record<Mode, InputConfig[]> = {
+  [Mode.SIMPLE]: simpleConfigs,
+  [Mode.ADVANCED]: advancedConfigs,
+};
 
 export default inputsConfigs;
