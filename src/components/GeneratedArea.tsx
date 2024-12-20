@@ -19,8 +19,8 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
   const placeholderStyles = {
     padding: 2,
     border: '1px solid #ccc',
-    borderRadius: 5,
-    minHeight: 270,
+    borderRadius: 1,
+    minHeight: 274,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
