@@ -8,7 +8,7 @@ const simpleConfigs: InputConfig[] = [
     name: 'Button Color',
     Component: ColorPicker,
     props: {
-      placeholder: "Enter a color (e.g. 'red')",
+      placeholder: 'Pick a color',
     },
     validate: (value: string) => (value ? '' : 'Color is required'),
   },

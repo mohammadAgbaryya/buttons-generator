@@ -6,13 +6,13 @@ import PaletteIcon from '@mui/icons-material/Palette';
 const ColorPicker: React.FC<{
   id: string;
   value: string;
-  onChange: Function;
+  onChange: (event: { target: { value: string } }) => void;
   placeholder?: string;
 }> = ({ id, value, onChange, placeholder }) => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
+    setAnchorEl(event.currentTarget as HTMLButtonElement);
   };
 
   const handleClose = () => {
@@ -20,19 +20,17 @@ const ColorPicker: React.FC<{
   };
 
   const handleChange = (color: { hex: string }) => {
-    onChange({ target: { value: color.hex } }); // Pass the selected color hex to the parent
+    onChange({ target: { value: color.hex } });
   };
 
   const open = Boolean(anchorEl);
 
   return (
     <Box>
-      {/* Color Picker Input Field */}
       <TextField
         id={id}
         fullWidth
         value={value}
-        onChange={onChange} // Allow manual input
         placeholder={placeholder}
         InputProps={{
           startAdornment: (
@@ -55,9 +53,10 @@ const ColorPicker: React.FC<{
             </InputAdornment>
           ),
         }}
+        onClick={handleClick}
+        inputProps={{ readOnly: true, sx: { cursor: 'pointer' } }}
       />
 
-      {/* Popup Color Picker */}
       <Popover
         open={open}
         anchorEl={anchorEl}
