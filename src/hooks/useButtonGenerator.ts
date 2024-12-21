@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import InputConfig from '../models/InputConfig';
-import { generateStyledButton } from '../utils/openai';
 import Mode from '../models/Mode';
+import generateButtonWithAI from '../utils/openai';
 
 const getInitialValues = (configs: InputConfig[]): Record<string, string> => {
   const initialValues: Record<string, string> = {};
@@ -44,12 +44,12 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
 
     setIsLoading(true);
 
-    const prompt = inputsConfigs[mode]
+    const inputs = inputsConfigs[mode]
       .map((input) => `${input.name}: ${values[input.id]}`)
       .join('\n');
 
     try {
-      const response = await generateStyledButton(prompt);
+      const response = await generateButtonWithAI(inputs);
       setGeneratedHTML(response);
     } catch (error) {
       console.error(error);

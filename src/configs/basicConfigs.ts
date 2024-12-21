@@ -36,7 +36,7 @@ const simpleConfigs: InputConfig[] = [
     props: {
       placeholder: 'Enter the text',
     },
-    validate: (value: string) => (value ? '' : 'Text is required'),
+    validate: (value: string) => (value.trim() ? '' : 'Text is required'),
   },
 ];
 

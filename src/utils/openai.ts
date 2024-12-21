@@ -4,7 +4,7 @@ import { sanitizeInput } from '.';
 const OPEN_AI_ENDPOINT = 'https://api.openai.com/v1/completions';
 const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
-export const generateStyledButton = async (inputs: string): Promise<string> => {
+const generateButtonWithAI = async (inputs: string): Promise<string> => {
   const prompt = `
     Create a styled HTML button based on the following inputs:
     ${inputs}
@@ -36,3 +36,5 @@ export const generateStyledButton = async (inputs: string): Promise<string> => {
     throw new Error('Failed to generate button. Please try again.');
   }
 };
+
+export default generateButtonWithAI;
