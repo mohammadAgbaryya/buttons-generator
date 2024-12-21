@@ -12,9 +12,9 @@ const getInitialValues = (configs: InputConfig[]): Record<string, string> => {
 };
 
 const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
-  const [mode, setMode] = useState(Mode.SIMPLE);
+  const [mode, setMode] = useState(Mode.BASIC);
   const [values, setValues] = useState<Record<string, string>>(
-    getInitialValues(inputsConfigs[Mode.SIMPLE])
+    getInitialValues(inputsConfigs[Mode.BASIC])
   );
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);

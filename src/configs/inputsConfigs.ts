@@ -1,11 +1,11 @@
 import InputConfig from '../models/InputConfig';
 import Mode from '../models/Mode';
-import advancedConfigs from './advancedConfigs';
-import simpleConfigs from './simpleConfigs';
+import basicConfigs from './basicConfigs';
+import themeConfigs from './themeConfigs';
 
 const inputsConfigs: Record<Mode, InputConfig[]> = {
-  [Mode.SIMPLE]: simpleConfigs,
-  [Mode.ADVANCED]: advancedConfigs,
+  [Mode.BASIC]: basicConfigs,
+  [Mode.THEME]: themeConfigs,
 };
 
 export default inputsConfigs;

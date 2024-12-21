@@ -31,8 +31,8 @@ const ButtonGenerator: React.FC = () => {
           <ToggleGroup
             value={mode}
             options={[
-              { value: Mode.SIMPLE, label: 'Simple Generator' },
-              { value: Mode.ADVANCED, label: 'Advanced Generator' },
+              { value: Mode.BASIC, label: 'Basic Generator' },
+              { value: Mode.THEME, label: 'Theme Generator' },
             ]}
             onChange={(newValue) => setMode(newValue as Mode)}
           />

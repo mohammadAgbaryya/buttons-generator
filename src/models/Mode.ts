@@ -1,5 +1,5 @@
 enum Mode {
-  SIMPLE = 'simple',
-  ADVANCED = 'advanced',
+  BASIC = 'basic',
+  THEME = 'theme',
 }
 export default Mode;
