@@ -37,7 +37,7 @@ const ColorPicker: React.FC<{
             <Box
               sx={{
                 width: 24,
-                height: 24,
+                height: 21,
                 backgroundColor: value,
                 borderRadius: '50%',
                 border: '1px solid #ccc',
