@@ -1,3 +1,4 @@
+import ColorPicker from '../components/core/ColorPicker';
 import TextField from '../components/core/TextField';
 import InputConfig from '../models/InputConfig';
 
@@ -5,7 +6,7 @@ const simpleConfigs: InputConfig[] = [
   {
     id: 'simple-color',
     name: 'Button Color',
-    Component: TextField,
+    Component: ColorPicker,
     props: {
       placeholder: "Enter a color (e.g. 'red')",
     },
