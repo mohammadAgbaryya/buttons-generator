@@ -42,7 +42,9 @@ const ButtonGenerator: React.FC = () => {
       container
       spacing={4}
       sx={{
-        padding: 4,
+        pt: 4,
+        pb: 1,
+        px: 4,
         flexGrow: 1,
       }}
     >

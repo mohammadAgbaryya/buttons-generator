@@ -16,15 +16,15 @@ const InputFields: React.FC<InputFieldsProps> = ({
   handleInputChange,
   mode,
 }) => {
-  return inputsConfigs[mode].map(({ id, Component, placeholder }) => (
+  return inputsConfigs[mode].map(({ id, Component, props }) => (
     <Box key={id} sx={{ width: '100%' }}>
       <Component
         id={id}
-        value={formValues[id] || ''}
-        placeholder={placeholder}
-        onChange={(e) => handleInputChange(id, e.target.value)}
+        value={formValues[id]}
+        onChange={(e) => handleInputChange(id, e.target.value as string)}
         error={!!errors[id]}
         helperText={errors[id]}
+        {...props}
       />
     </Box>
   ));

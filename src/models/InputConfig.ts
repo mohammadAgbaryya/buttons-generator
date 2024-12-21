@@ -1,12 +1,20 @@
+import Select from '../components/core/Select';
 import TextField from '../components/core/TextField';
+import SelectOption from './SelectOption';
 
-type ComponentType = typeof TextField;
+type ComponentType = typeof TextField | typeof Select;
+type Props = {
+  defaultValue?: string;
+  placeholder?: string;
+  label?: string;
+  options?: SelectOption[];
+};
 
 interface InputConfig {
   id: string;
   name: string;
   Component: ComponentType;
-  placeholder?: string;
-  validator: (value: string) => string;
+  props: Props;
+  validate: (value: string) => string;
 }
 export default InputConfig;

@@ -17,7 +17,6 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
   const [view, setView] = useState<View>(View.UI);
 
   const placeholderStyles = {
-    padding: 2,
     border: '1px solid #ccc',
     borderRadius: 1,
     minHeight: 274,

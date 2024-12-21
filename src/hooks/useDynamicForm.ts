@@ -1,10 +1,5 @@
 import { useState } from 'react';
-
-type InputConfig = {
-  id: string;
-  name: string;
-  validator: (value: string) => string;
-};
+import InputConfig from '../models/InputConfig';
 
 const useDynamicForm = (
   inputsConfig: InputConfig[]
@@ -21,7 +16,7 @@ const useDynamicForm = (
     setFormValues((prev) => ({ ...prev, [id]: value }));
     const inputConfig = inputsConfig.find((input) => input.id === id);
     if (inputConfig) {
-      const error = inputConfig.validator(value);
+      const error = inputConfig.validate(value);
       setErrors((prev) => ({ ...prev, [id]: error }));
     }
   };
@@ -29,7 +24,7 @@ const useDynamicForm = (
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
     inputsConfig.forEach((input) => {
-      const error = input.validator(formValues[input.id] || '');
+      const error = input.validate(formValues[input.id] || input.props.defaultValue || '');
       if (error) newErrors[input.id] = error;
     });
     setErrors(newErrors);

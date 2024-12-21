@@ -15,9 +15,6 @@ const Header: React.FC = () => {
         <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Spicy Rice' }}>
           BUTTONS GENERATOR
         </Typography>
-        <Typography variant="h5" color="inherit">
-          Hey there, welcome!
-        </Typography>
       </Toolbar>
     </AppBar>
   );

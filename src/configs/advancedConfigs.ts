@@ -1,13 +1,31 @@
+import Select from '../components/core/Select';
 import TextField from '../components/core/TextField';
 import InputConfig from '../models/InputConfig';
 
 const advancedConfigs: InputConfig[] = [
   {
+    id: 'style',
+    name: 'Button Style',
+    Component: Select,
+    props: {
+      defaultValue: 'modern',
+      placeholder: 'Enter button text',
+      options: [
+        { value: 'modern', label: 'Modern' },
+        { value: 'minimal', label: 'Minimal' },
+        { value: 'cute', label: 'Cute' },
+      ],
+    },
+    validate: (value: string) => (value ? '' : 'Style is required'),
+  },
+  {
     id: 'text',
     name: 'Button Text',
     Component: TextField,
-    placeholder: 'Enter button text',
-    validator: (value: string) => (value ? '' : 'Text is required'),
+    props: {
+      placeholder: 'Enter button text',
+    },
+    validate: (value: string) => (value ? '' : 'Text is required'),
   },
 ];
 
