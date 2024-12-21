@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Skeleton, Typography } from '@mui/material';
 import beautify from 'js-beautify';
 import ToggleGroup from './core/ToggleGroup';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 type GeneratedAreaProps = {
   loading: boolean;
@@ -23,6 +24,7 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    background: '#fff',
   };
 
   const formatHTML = (html: string): string => {
@@ -75,6 +77,7 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
             color: '#888',
           }}
         >
+          <AutoAwesomeIcon sx={{ color: '#D4AF37', mr: 1 }} />
           Your generated {view === View.CODE ? 'code' : 'button'} will appear here!
         </Typography>
       )}

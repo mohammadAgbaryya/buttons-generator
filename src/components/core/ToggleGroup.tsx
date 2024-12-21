@@ -30,7 +30,21 @@ const ToggleGroup: React.FC<ToggleGroupProps> = ({
       {...rest}
     >
       {options.map((option) => (
-        <ToggleButton key={option.value} value={option.value} sx={{ textTransform: 'none' }}>
+        <ToggleButton
+          key={option.value}
+          value={option.value}
+          sx={{
+            textTransform: 'none',
+            background: '#fff',
+            '&.Mui-selected': {
+              backgroundColor: 'primary.main',
+              color: '#fff',
+              '&:hover': {
+                backgroundColor: 'primary.dark',
+              },
+            },
+          }}
+        >
           {option.label}
         </ToggleButton>
       ))}

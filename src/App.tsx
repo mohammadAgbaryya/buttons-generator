@@ -9,13 +9,18 @@ import customTheme from './theme';
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={customTheme}>
-      {/* CssBaseline applies global resets */}
       <CssBaseline />
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
           minHeight: '100vh',
+          background:
+            'linear-gradient(180deg, rgba(225, 235, 255, 1) 0%, rgba(240, 244, 255, 1) 50%, rgba(255, 255, 255, 1) 100%)',
+          // background:
+          //   'linear-gradient(180deg, rgba(240, 244, 255, 1) 0%, rgba(255, 255, 255, 1) 100%)',
+          // background:
+          //   'linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 244, 255, 1) 50%, rgba(225, 235, 255, 1) 100%)',
         }}
       >
         <Header />

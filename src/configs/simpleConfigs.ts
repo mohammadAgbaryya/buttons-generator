@@ -7,7 +7,7 @@ const simpleConfigs: InputConfig[] = [
     name: 'Button Color',
     Component: TextField,
     props: {
-      placeholder: "Enter a color (e.g., 'red')",
+      placeholder: "Enter a color (e.g. 'red')",
     },
     validate: (value: string) => (value ? '' : 'Color is required'),
   },
@@ -16,7 +16,7 @@ const simpleConfigs: InputConfig[] = [
     name: 'Button Size',
     Component: TextField,
     props: {
-      placeholder: "Enter a size (e.g., 'large')",
+      placeholder: "Enter a size (e.g. 'large')",
     },
     validate: (value: string) => (value ? '' : 'Size is required'),
   },

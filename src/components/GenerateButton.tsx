@@ -23,7 +23,7 @@ const GenerateButtonProps: React.FC<GenerateButtonProps> = ({ loading, onClick, 
           <SettingsSuggestIcon style={{ fontSize: 28 }} />
         )
       }
-      sx={{ padding: 1, fontSize: 24, fontFamily: 'Spicy Rice' }}
+      sx={{ padding: 1, fontSize: 24 }}
       fullWidth
     >
       {loading ? 'Generating...' : 'Generate'}

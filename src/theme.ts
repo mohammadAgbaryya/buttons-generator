@@ -10,6 +10,24 @@ const customTheme = createTheme({
   typography: {
     fontFamily: 'Itim, serif;',
   },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-root': {
+            backgroundColor: 'white',
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        select: {
+          backgroundColor: 'white',
+        },
+      },
+    },
+  },
 });
 
 export default customTheme;
