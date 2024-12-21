@@ -22,7 +22,7 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
   const isValid = (): boolean => {
     const newErrors: Record<string, string> = {};
     inputsConfigs[mode].forEach((input) => {
-      const error = input.validate(values[input.id] || input.props.defaultValue || '');
+      const error = input.validate(values[input.id]);
       if (error) newErrors[input.id] = error;
     });
     setErrors(newErrors);

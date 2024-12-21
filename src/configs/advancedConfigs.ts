@@ -9,7 +9,7 @@ const advancedConfigs: InputConfig[] = [
     Component: Select,
     props: {
       defaultValue: 'modern',
-      placeholder: 'Enter button text',
+      placeholder: 'Select button style',
       options: [
         { value: 'modern', label: 'Modern' },
         { value: 'minimal', label: 'Minimal' },

@@ -31,7 +31,7 @@ const ColorPicker: React.FC<{
         id={id}
         fullWidth
         value={value}
-        placeholder={placeholder}
+        label={placeholder}
         InputProps={{
           startAdornment: (
             <Box
