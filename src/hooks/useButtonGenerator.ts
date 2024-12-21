@@ -3,9 +3,19 @@ import InputConfig from '../models/InputConfig';
 import { generateStyledButton } from '../utils/openai';
 import Mode from '../models/Mode';
 
+const getInitialValues = (configs: InputConfig[]): Record<string, string> => {
+  const initialValues: Record<string, string> = {};
+  configs.forEach((input) => {
+    initialValues[input.id] = input.props?.defaultValue || '';
+  });
+  return initialValues;
+};
+
 const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
   const [mode, setMode] = useState(Mode.SIMPLE);
-  const [values, setValues] = useState<Record<string, string>>({});
+  const [values, setValues] = useState<Record<string, string>>(
+    getInitialValues(inputsConfigs[Mode.SIMPLE])
+  );
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
   const [generatedHTML, setGeneratedHTML] = useState<string | null>(null);
@@ -48,13 +58,20 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
     }
   };
 
+  // Update values when mode changes
+  const handleModeChange = (newMode: Mode) => {
+    setMode(newMode);
+    setValues(getInitialValues(inputsConfigs[newMode]));
+    setErrors({});
+  };
+
   return {
     mode,
     values,
     errors,
     isLoading,
     generatedHTML,
-    setMode,
+    setMode: handleModeChange,
     handleInputChange,
     generate,
   };
