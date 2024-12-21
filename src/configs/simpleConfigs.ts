@@ -3,8 +3,8 @@ import InputConfig from '../models/InputConfig';
 
 const simpleConfigs: InputConfig[] = [
   {
-    id: 'color',
-    name: 'Color',
+    id: 'simple-color',
+    name: 'Button Color',
     Component: TextField,
     props: {
       placeholder: "Enter a color (e.g., 'red')",
@@ -12,8 +12,8 @@ const simpleConfigs: InputConfig[] = [
     validate: (value: string) => (value ? '' : 'Color is required'),
   },
   {
-    id: 'size',
-    name: 'Size',
+    id: 'simple-size',
+    name: 'Button Size',
     Component: TextField,
     props: {
       placeholder: "Enter a size (e.g., 'large')",
@@ -21,7 +21,7 @@ const simpleConfigs: InputConfig[] = [
     validate: (value: string) => (value ? '' : 'Size is required'),
   },
   {
-    id: 'text',
+    id: 'simple-text',
     name: 'Button Text',
     Component: TextField,
     props: {

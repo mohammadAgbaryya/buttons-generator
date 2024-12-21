@@ -4,7 +4,7 @@ import InputConfig from '../models/InputConfig';
 
 const advancedConfigs: InputConfig[] = [
   {
-    id: 'style',
+    id: 'advanced-style',
     name: 'Button Style',
     Component: Select,
     props: {
@@ -19,7 +19,7 @@ const advancedConfigs: InputConfig[] = [
     validate: (value: string) => (value ? '' : 'Style is required'),
   },
   {
-    id: 'text',
+    id: 'advanced-text',
     name: 'Button Text',
     Component: TextField,
     props: {

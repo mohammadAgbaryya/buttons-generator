@@ -1,41 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import GenerateButton from './GenerateButton';
 import inputsConfigs from '../configs/inputsConfigs';
-import { generateStyledButton } from '../utils/openai';
-import useDynamicForm from '../hooks/useDynamicForm';
+import useButtonGenerator from '../hooks/useButtonGenerator';
 import InputFields from './InputFields';
 import GeneratedArea from './GeneratedArea';
 import Mode from '../models/Mode';
 import ToggleGroup from './core/ToggleGroup';
 
 const ButtonGenerator: React.FC = () => {
-  const [mode, setMode] = useState<Mode>(Mode.SIMPLE);
-  const { formValues, errors, handleInputChange, validateForm } = useDynamicForm(
-    inputsConfigs[mode]
-  );
-  const [loading, setLoading] = React.useState(false);
-  const [generatedHTML, setGeneratedHTML] = React.useState<string | null>(null);
-
-  const generateButton = async (): Promise<void> => {
-    if (!validateForm()) return;
-
-    setLoading(true);
-
-    const prompt = inputsConfigs[mode]
-      .map((input) => `${input.name}: ${formValues[input.id]}`)
-      .join('\n');
-
-    try {
-      const response = await generateStyledButton(prompt);
-      setGeneratedHTML(response);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { mode, values, errors, isLoading, generatedHTML, setMode, handleInputChange, generate } =
+    useButtonGenerator(inputsConfigs);
 
   return (
     <Grid
@@ -63,20 +39,20 @@ const ButtonGenerator: React.FC = () => {
 
           {/* Input Fields */}
           <InputFields
-            formValues={formValues}
+            formValues={values}
             errors={errors}
             handleInputChange={handleInputChange}
             mode={mode}
           />
 
           {/* Generate Button */}
-          <GenerateButton loading={loading} onClick={generateButton} />
+          <GenerateButton loading={isLoading} onClick={generate} />
         </Box>
       </Grid>
 
       {/* Right Column: Generated Area */}
       <Grid size={{ xs: 12, md: 7 }}>
-        <GeneratedArea loading={loading} generatedHTML={generatedHTML} />
+        <GeneratedArea loading={isLoading} generatedHTML={generatedHTML} />
       </Grid>
     </Grid>
   );

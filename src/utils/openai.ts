@@ -2,10 +2,9 @@ import axios from 'axios';
 import { sanitizeInput } from '.';
 
 const OPEN_AI_ENDPOINT = 'https://api.openai.com/v1/completions';
+const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
 export const generateStyledButton = async (inputs: string): Promise<string> => {
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-
   const prompt = `
     Create a styled HTML button based on the following inputs:
     ${inputs}
@@ -25,7 +24,7 @@ export const generateStyledButton = async (inputs: string): Promise<string> => {
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${API_KEY}`,
         },
       }
     );
