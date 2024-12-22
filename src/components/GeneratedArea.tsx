@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Skeleton, Typography } from '@mui/material';
-import beautify from 'js-beautify';
 import ToggleGroup from './core/ToggleGroup';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { formatHTML, highlightCode } from '../utils';
 
 type GeneratedAreaProps = {
   loading: boolean;
@@ -27,14 +27,6 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
     background: '#fff',
   };
 
-  const formatHTML = (html: string): string => {
-    return beautify.html(html, {
-      indent_size: 2,
-      wrap_line_length: 80,
-      end_with_newline: true,
-    });
-  };
-
   const formattedCode = generatedHTML ? formatHTML(generatedHTML) : '';
 
   return (
@@ -49,14 +41,7 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
       />
 
       {loading ? (
-        <Box
-          sx={{
-            ...placeholderStyles,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <Box sx={{ ...placeholderStyles }}>
           <Skeleton
             variant="rectangular"
             width={160}
@@ -80,7 +65,11 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
               padding: 4,
             }}
           >
-            {formattedCode}
+            <code
+              dangerouslySetInnerHTML={{
+                __html: highlightCode(formattedCode),
+              }}
+            />
           </Box>
         ) : (
           <Box dangerouslySetInnerHTML={{ __html: generatedHTML }} sx={{ ...placeholderStyles }} />

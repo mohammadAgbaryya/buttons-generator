@@ -2,14 +2,7 @@ import { useState } from 'react';
 import InputConfig from '../models/InputConfig';
 import Mode from '../models/Mode';
 import generateButtonWithAI from '../utils/openai';
-
-const getInitialValues = (configs: InputConfig[]): Record<string, string> => {
-  const initialValues: Record<string, string> = {};
-  configs.forEach((input) => {
-    initialValues[input.id] = input.props?.defaultValue || '';
-  });
-  return initialValues;
-};
+import { getInitialValues } from '../utils';
 
 const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
   const [mode, setMode] = useState(Mode.BASIC);
