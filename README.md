@@ -1,8 +1,13 @@
-# <img src="public/favico.svg" alt="Buttons Generator" width="32" height="32" style="vertical-align: middle;" /> Buttons Generator App
+# <img src="public/favico.svg" alt="Buttons Generator" width="32" height="42" style="vertical-align: top; margin-top: -2px" /> Buttons Generator
 
-A dynamic and interactive React app that generates styled HTML buttons based on user inputs for color, size, and text. Explore the live demo on **[GitHub Pages](insert_github_pages_link_here)**.
+A dynamic and interactive React app powered by OpenAI that generates styled HTML Buttons based on user inputs. Explore the live demo
+**[Here](insert_github_pages_link_here)**.
 
 🔗 **Deployment Pipeline**: [View Deployment Process](insert_pipeline_link_here)
+
+## 🛠️ Tech Stack
+
+**Vite** · **TypeScript** · **React 18** · **MUI 6** · **Axios** · **DOMPurify** · **js-beautify** · **PrismJS** · **react-color** · **ESLint** · **Prettier** · **Husky** · **Functional Programming** · **Composable Design**
 
 ## 🚀 How to Use
 
@@ -25,7 +30,7 @@ A dynamic and interactive React app that generates styled HTML buttons based on 
   npm run dev
   ```
 
-## 📂 Access the App Locally
+## 🖥️ Access the App Locally
 
 After starting the development server, open your browser and navigate to: [http://localhost:5173](http://localhost:5173)
 
@@ -37,8 +42,12 @@ You can access the deployed app directly on GitHub Pages using this link: [**Liv
 
 - **Add Tests**: Include unit tests and end-to-end (E2E) tests to ensure the app's functionality and robustness.
 - **Observability**: Integrate logs, performance metrics, and monitoring tools for better debugging and analysis.
-- **Enhanced User Interface**: Further refine the UI to make it more modern and interactive.
-- **Additional Features**: Support more input variations, such as custom styles (e.g., "minimal," "modern") and accessibility improvements.
 - **Security Measures**: Implement filters to handle vague or potentially harmful inputs more effectively.
 
-Feel free to contribute ideas or features to enhance the app further!
+## 🤝 Contributing
+
+At the moment, this project is not open for external contributions. However, we welcome your ideas and suggestions to improve the app!
+
+## 📧 Contact
+
+Have questions, feedback, or suggestions? Feel free to reach out! Email: [mohammad.agbaryya@gmail.com](mailto:mohammad.agbaryya@gmail.com)
