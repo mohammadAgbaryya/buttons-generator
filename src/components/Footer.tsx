@@ -15,7 +15,9 @@ const Footer: React.FC = () => {
         marginTop: 'auto',
       }}
     >
-      <Typography variant="body1">© {currentYear} - All rights reserved!</Typography>
+      <Typography variant="body1">
+        © {currentYear} - All rights reserved!
+      </Typography>
     </Box>
   );
 };

@@ -9,9 +9,21 @@ type SelectProps = {
   options?: SelectOption[];
 };
 
-const Select: React.FC<SelectProps> = ({ id, placeholder, options, ...rest }) => {
+const Select: React.FC<SelectProps> = ({
+  id,
+  placeholder,
+  options,
+  ...rest
+}) => {
   return (
-    <TextField id={id} select label={placeholder} fullWidth variant="outlined" {...rest}>
+    <TextField
+      id={id}
+      select
+      label={placeholder}
+      fullWidth
+      variant="outlined"
+      {...rest}
+    >
       {options?.map((option) => (
         <MenuItem key={option.value} value={option.value}>
           {option.label}

@@ -10,8 +10,16 @@ import Mode from '../models/Mode';
 import ToggleGroup from './core/ToggleGroup';
 
 const ButtonGenerator: React.FC = () => {
-  const { mode, values, errors, isLoading, generatedHTML, setMode, handleInputChange, generate } =
-    useButtonGenerator(inputsConfigs);
+  const {
+    mode,
+    values,
+    errors,
+    isLoading,
+    generatedHTML,
+    setMode,
+    handleInputChange,
+    generate,
+  } = useButtonGenerator(inputsConfigs);
 
   return (
     <Grid

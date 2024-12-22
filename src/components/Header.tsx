@@ -12,7 +12,11 @@ const Header: React.FC = () => {
         <IconButton edge="start" color="inherit" aria-label="logo">
           <SmartButtonIcon sx={{ fontSize: 64, color: '#48dbfb' }} />
         </IconButton>
-        <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Spicy Rice' }}>
+        <Typography
+          variant="h5"
+          component="div"
+          sx={{ flexGrow: 1, fontFamily: 'Spicy Rice' }}
+        >
           BUTTONS GENERATOR
         </Typography>
       </Toolbar>

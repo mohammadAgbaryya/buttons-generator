@@ -20,7 +20,9 @@ export const highlightCode = (code: string): string => {
   return Prism.highlight(code, Prism.languages.html, 'html');
 };
 
-export const getInitialValues = (configs: InputConfig[]): Record<string, string> => {
+export const getInitialValues = (
+  configs: InputConfig[]
+): Record<string, string> => {
   const initialValues: Record<string, string> = {};
   configs.forEach((input) => {
     initialValues[input.id] = input.props?.defaultValue || '';

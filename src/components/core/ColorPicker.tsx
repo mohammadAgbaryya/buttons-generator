@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Box, TextField, Popover, InputAdornment, IconButton } from '@mui/material';
+import {
+  Box,
+  TextField,
+  Popover,
+  InputAdornment,
+  IconButton,
+} from '@mui/material';
 import { SketchPicker } from 'react-color';
 import PaletteIcon from '@mui/icons-material/Palette';
 
@@ -11,7 +17,9 @@ const ColorPicker: React.FC<{
 }> = ({ id, value, onChange, placeholder }) => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
+  ) => {
     setAnchorEl(event.currentTarget as HTMLButtonElement);
   };
 

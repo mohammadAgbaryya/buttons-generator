@@ -14,7 +14,10 @@ enum View {
   CODE = 'code',
 }
 
-const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML }) => {
+const GeneratedArea: React.FC<GeneratedAreaProps> = ({
+  loading,
+  generatedHTML,
+}) => {
   const [view, setView] = useState<View>(View.UI);
 
   const placeholderStyles = {
@@ -72,7 +75,10 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
             />
           </Box>
         ) : (
-          <Box dangerouslySetInnerHTML={{ __html: generatedHTML }} sx={{ ...placeholderStyles }} />
+          <Box
+            dangerouslySetInnerHTML={{ __html: generatedHTML }}
+            sx={{ ...placeholderStyles }}
+          />
         )
       ) : (
         <Typography
@@ -83,7 +89,8 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
           }}
         >
           <AutoAwesomeIcon sx={{ color: '#D4AF37', mr: 1 }} />
-          Your generated {view === View.CODE ? 'code' : 'button'} will appear here!
+          Your generated {view === View.CODE ? 'code' : 'button'} will appear
+          here!
         </Typography>
       )}
     </Box>

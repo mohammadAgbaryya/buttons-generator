@@ -9,7 +9,11 @@ type GenerateButtonProps = {
   disabled?: boolean;
 };
 
-const GenerateButtonProps: React.FC<GenerateButtonProps> = ({ loading, onClick, disabled }) => {
+const GenerateButtonProps: React.FC<GenerateButtonProps> = ({
+  loading,
+  onClick,
+  disabled,
+}) => {
   return (
     <Button
       variant="contained"
