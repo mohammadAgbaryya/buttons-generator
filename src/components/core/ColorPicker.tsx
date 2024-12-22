@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  TextField,
-  Popover,
-  InputAdornment,
-  IconButton,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Popover from '@mui/material/Popover';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
 import { SketchPicker } from 'react-color';
 import PaletteIcon from '@mui/icons-material/Palette';
 

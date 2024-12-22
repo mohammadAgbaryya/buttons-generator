@@ -1,9 +1,8 @@
 import React from 'react';
-import {
-  ToggleButton,
-  ToggleButtonGroup,
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup, {
   ToggleButtonGroupProps,
-} from '@mui/material';
+} from '@mui/material/ToggleButtonGroup';
 
 type ToggleOption = {
   value: string;

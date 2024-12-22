@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Skeleton, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
+import Typography from '@mui/material/Typography';
 import ToggleGroup from './core/ToggleGroup';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
