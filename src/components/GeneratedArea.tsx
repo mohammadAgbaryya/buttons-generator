@@ -62,10 +62,10 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({
           variant="body1"
           sx={{
             ...placeholderStyles,
-            color: 'red',
+            color: 'error.main',
           }}
         >
-          <ErrorOutlineIcon sx={{ color: 'red', mr: 1 }} />
+          <ErrorOutlineIcon sx={{ color: 'error.main', mr: 1 }} />
           {errorMessage}
         </Typography>
       ) : generatedHTML ? (
