@@ -49,7 +49,23 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
       />
 
       {loading ? (
-        <Skeleton variant="rectangular" sx={placeholderStyles} />
+        <Box
+          sx={{
+            ...placeholderStyles,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Skeleton
+            variant="rectangular"
+            width={160}
+            height={50}
+            sx={{
+              borderRadius: 2,
+            }}
+          />
+        </Box>
       ) : generatedHTML ? (
         view === View.CODE ? (
           <Box
@@ -61,13 +77,13 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({ loading, generatedHTML })
               fontFamily: 'monospace',
               whiteSpace: 'pre-wrap',
               wordWrap: 'break-word',
-              maxHeight: '400px',
+              padding: 4,
             }}
           >
             {formattedCode}
           </Box>
         ) : (
-          <Box dangerouslySetInnerHTML={{ __html: generatedHTML }} sx={placeholderStyles} />
+          <Box dangerouslySetInnerHTML={{ __html: generatedHTML }} sx={{ ...placeholderStyles }} />
         )
       ) : (
         <Typography
