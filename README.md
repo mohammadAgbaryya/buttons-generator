@@ -7,7 +7,7 @@ A dynamic and interactive React app powered by OpenAI that generates styled HTML
 
 ## 🛠️ Tech Stack
 
-**Vite** · **TypeScript** · **React 18** · **MUI 6** · **Axios** · **DOMPurify** · **js-beautify** · **PrismJS** · **react-color** · **ESLint** · **Prettier** · **Husky** · **Functional Programming** · **Composable Design**
+**Vite** · **TypeScript** · **React 18** · **MUI 6** · **Axios** · **DOMPurify** · **js-beautify** · **PrismJS** · **react-color** · **ESLint** · **Prettier** · **Husky** · **GitHub Actions** · **Functional Programming** · **Composable Design**
 
 ## 🚀 How to Use
 
@@ -41,7 +41,7 @@ You can access the deployed app directly on GitHub Pages using this link: [**Liv
 ## 🔧 What to Improve / Add in the Future
 
 - **Add Tests**: Include unit tests and end-to-end (E2E) tests to ensure the app's functionality and robustness.
-- **Observability**: Integrate logs, performance metrics, and monitoring tools for better debugging and analysis.
+- **Observability**: logs, metrics, and monitoring tools for better debugging and analysis.
 - **Security Measures**: Implement filters to handle vague or potentially harmful inputs more effectively.
 
 ## 🤝 Contributing
