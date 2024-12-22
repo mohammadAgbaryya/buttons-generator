@@ -1,20 +1,29 @@
-# <img src="public/favico.svg" alt="Buttons Generator" width="32" height="42" style="vertical-align: top; margin-top: -2px" /> Buttons Generator
+# <img src="public/favico.svg" alt="Buttons Generator" width="32" height="42" style="vertical-align: middle; margin-top: -2px" /> Buttons Generator
 
 A dynamic and interactive React app powered by OpenAI that generates styled HTML Buttons based on user inputs. Explore the live demo
-**[Here](insert_github_pages_link_here)**.
+**[Here](https://mohammadagbaryya.github.io/buttons-generator)**.
 
-🔗 **Deployment Pipeline**: [View Deployment Process](insert_pipeline_link_here)
+## 🚦 CI Status
+
+![CI](https://github.com/mohammadAgbaryya/buttons-generator/actions/workflows/ci.yml/badge.svg)
+
+## 📊 Test Coverage
+
+![Statements](./coverage-badges/badge-statements.svg)
+![Branches](./coverage-badges/badge-branches.svg)
+![Functions](./coverage-badges/badge-functions.svg)
+![Lines](./coverage-badges/badge-lines.svg)
 
 ## 🛠️ Tech Stack
 
-**Vite** · **TypeScript** · **React 18** · **MUI 6** · **Axios** · **DOMPurify** · **js-beautify** · **PrismJS** · **react-color** · **ESLint** · **Prettier** · **Husky** · **GitHub Actions** · **Functional Programming** · **Composable Design**
+**Vite** · **TypeScript** · **React 18** · **MUI 6** · **Axios** · **DOMPurify** · **js-beautify** · **PrismJS** · **react-color** · **Jest** · **ESLint** · **Prettier** · **Husky** · **GitHub Actions** · **Functional Programming** · **Composable Design**
 
 ## 🚀 How to Use
 
 - Clone the Repository
 
   ```bash
-  git clone <repository-url>
+  git clone https://github.com/mohammadAgbaryya/buttons-generator.git
   ```
 
 - Navigate to the project directory and install dependencies:
@@ -36,7 +45,7 @@ After starting the development server, open your browser and navigate to: [http:
 
 ## 🌐 Access on GitHub Pages
 
-You can access the deployed app directly on GitHub Pages using this link: [**Live Demo**](insert_github_pages_link_here)
+You can access the deployed app directly on GitHub Pages using this link: [**Live Demo**](https://mohammadagbaryya.github.io/buttons-generator)
 
 ## 🔧 What to Improve / Add in the Future
 

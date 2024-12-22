@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { sanitizeInput } from '.';
-
-const OPEN_AI_ENDPOINT = 'https://api.openai.com/v1/completions';
-const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+import { OPENAI_API_KEY, OPENAI_ENDPOINT } from '../consts/env';
 
 const generateButtonWithAI = async (inputs: string): Promise<string> => {
   const prompt = `
@@ -14,7 +12,7 @@ const generateButtonWithAI = async (inputs: string): Promise<string> => {
 
   try {
     const response = await axios.post(
-      OPEN_AI_ENDPOINT,
+      OPENAI_ENDPOINT,
       {
         model: 'gpt-3.5-turbo-instruct',
         prompt,
@@ -24,7 +22,7 @@ const generateButtonWithAI = async (inputs: string): Promise<string> => {
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${API_KEY}`,
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
       }
     );
