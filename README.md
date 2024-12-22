@@ -1,4 +1,4 @@
-# <img src="public/favico.svg" alt="Buttons Generator" width="32" height="42" style="vertical-align: middle; margin-top: -2px" /> Buttons Generator
+# ⏺️ Buttons Generator
 
 A dynamic and interactive React app powered by OpenAI that generates styled HTML Buttons based on user inputs. Explore the live demo
 **[Here](https://mohammadagbaryya.github.io/buttons-generator)**.

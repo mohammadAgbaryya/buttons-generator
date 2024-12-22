@@ -1,0 +1,38 @@
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run Linting
+      - name: Lint code
+        run: npm run lint
+
+      # Run Type-Checking
+      - name: Run Type-Check
+        run: npm run type-check
+
+      # Run Tests
+      - name: Run Tests
+        run: npm run test
