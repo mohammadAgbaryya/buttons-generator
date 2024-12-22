@@ -42,6 +42,8 @@ You can access the deployed app directly on GitHub Pages using this link: [**Liv
 
 - **Add Tests**: Include unit tests and end-to-end (E2E) tests to ensure the app's functionality and robustness.
 - **Observability**: logs, metrics, and monitoring tools for better debugging and analysis.
+- **Accessibility**: Implement features to make the app accessible to all users, including those with disabilities.
+- **Multi-Language Support**: Add support for multiple languages to make the app usable for a global audience.
 - **Security Measures**: Implement filters to handle vague or potentially harmful inputs more effectively.
 
 ## 🤝 Contributing
