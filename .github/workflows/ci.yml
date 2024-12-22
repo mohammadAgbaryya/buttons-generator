@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Pipeline - Lint, Test, Build, and Deploy
 
 on: [push, pull_request]
 
@@ -36,3 +36,16 @@ jobs:
       # Run Tests
       - name: Run Tests
         run: npm run test
+
+      # Build
+      - name: Build project
+        run: npm run build
+
+        # Deploy
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true

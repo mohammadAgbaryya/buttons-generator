@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "jest --no-coverage --bail",
+    "test": "jest --no-coverage --bail --silent",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage && jest-coverage-badges",
     "move:badges": "node moveBadges.js",
