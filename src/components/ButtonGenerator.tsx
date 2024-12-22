@@ -19,6 +19,7 @@ const ButtonGenerator: React.FC = () => {
     setMode,
     handleInputChange,
     generate,
+    errorMessage,
   } = useButtonGenerator(inputsConfigs);
 
   return (
@@ -60,7 +61,11 @@ const ButtonGenerator: React.FC = () => {
 
       {/* Right Column: Generated Area */}
       <Grid size={{ xs: 12, md: 7 }}>
-        <GeneratedArea loading={isLoading} generatedHTML={generatedHTML} />
+        <GeneratedArea
+          loading={isLoading}
+          generatedHTML={generatedHTML}
+          errorMessage={errorMessage}
+        />
       </Grid>
     </Grid>
   );

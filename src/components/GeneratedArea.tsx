@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Box, Skeleton, Typography } from '@mui/material';
 import ToggleGroup from './core/ToggleGroup';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { formatHTML, highlightCode } from '../utils';
 
 type GeneratedAreaProps = {
   loading: boolean;
   generatedHTML: string | null;
+  errorMessage: string | null;
 };
 
 enum View {
@@ -17,13 +19,14 @@ enum View {
 const GeneratedArea: React.FC<GeneratedAreaProps> = ({
   loading,
   generatedHTML,
+  errorMessage,
 }) => {
   const [view, setView] = useState<View>(View.UI);
 
   const placeholderStyles = {
     border: '1px solid #ccc',
     borderRadius: 1,
-    minHeight: 274,
+    height: 274,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -54,6 +57,17 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({
             }}
           />
         </Box>
+      ) : errorMessage ? (
+        <Typography
+          variant="body1"
+          sx={{
+            ...placeholderStyles,
+            color: 'red',
+          }}
+        >
+          <ErrorOutlineIcon sx={{ color: 'red', mr: 1 }} />
+          {errorMessage}
+        </Typography>
       ) : generatedHTML ? (
         view === View.CODE ? (
           <Box
@@ -63,8 +77,9 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({
               overflow: 'auto',
               textAlign: 'left',
               fontFamily: 'monospace',
-              whiteSpace: 'pre-wrap',
+              whiteSpace: 'pre-line',
               wordWrap: 'break-word',
+              margin: 0,
               padding: 4,
             }}
           >

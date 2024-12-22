@@ -12,6 +12,7 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
   const [generatedHTML, setGeneratedHTML] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleInputChange = (id: string, value: string): void => {
     setValues((prev) => ({ ...prev, [id]: value }));
@@ -36,6 +37,7 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
     if (!isValid()) return;
 
     setIsLoading(true);
+    setErrorMessage(null);
 
     const inputs = inputsConfigs[mode]
       .map((input) => `${input.name}: ${values[input.id]}`)
@@ -46,16 +48,19 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
       setGeneratedHTML(response);
     } catch (error) {
       console.error(error);
+      setErrorMessage(
+        error instanceof Error ? error.message : 'An unknown error occurred.'
+      );
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Update values when mode changes
   const handleModeChange = (newMode: Mode) => {
     setMode(newMode);
     setValues(getInitialValues(inputsConfigs[newMode]));
     setErrors({});
+    setErrorMessage(null);
   };
 
   return {
@@ -64,6 +69,7 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
     errors,
     isLoading,
     generatedHTML,
+    errorMessage,
     setMode: handleModeChange,
     handleInputChange,
     generate,

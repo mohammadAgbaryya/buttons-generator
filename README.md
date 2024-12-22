@@ -3,7 +3,7 @@
 A dynamic and interactive React app powered by OpenAI that generates styled HTML Buttons based on user inputs. Explore the live demo
 **[Here](https://mohammadagbaryya.github.io/buttons-generator)**.
 
-## 🚦 CI Status (Lint, Test, Build, and Deploy)
+## 🚦 CI Status
 
 ![CI](https://github.com/mohammadAgbaryya/buttons-generator/actions/workflows/ci.yml/badge.svg)
 
