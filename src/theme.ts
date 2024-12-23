@@ -27,6 +27,23 @@ const customTheme = createTheme({
         },
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          '&::placeholder': {
+            color: 'rgba(0, 0, 0, 0.4)',
+            opacity: 1,
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: 'rgba(0, 0, 0, 0.4)',
+        },
+      },
+    },
   },
 });
 

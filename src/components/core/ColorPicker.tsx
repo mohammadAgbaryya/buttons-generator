@@ -6,6 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import { SketchPicker } from 'react-color';
 import PaletteIcon from '@mui/icons-material/Palette';
+import { isValidColor } from '../../utils';
 
 const ColorPicker: React.FC<{
   id: string;
@@ -25,8 +26,12 @@ const ColorPicker: React.FC<{
     setAnchorEl(null);
   };
 
-  const handleChange = (color: { hex: string }) => {
+  const handlePickerChange = (color: { hex: string }) => {
     onChange({ target: { value: color.hex } });
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onChange({ target: { value: event.target.value } });
   };
 
   const open = Boolean(anchorEl);
@@ -37,19 +42,37 @@ const ColorPicker: React.FC<{
         id={id}
         fullWidth
         value={value}
-        label={placeholder}
+        label={value ? placeholder : undefined}
+        placeholder={!value ? placeholder : undefined}
         InputProps={{
           startAdornment: (
             <Box
               sx={{
                 width: 24,
                 height: 21,
-                backgroundColor: value,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: isValidColor(value) ? value : 'transparent',
                 borderRadius: '50%',
                 border: '1px solid #ccc',
                 marginRight: '8px',
+                position: 'relative',
               }}
-            />
+            >
+              {!isValidColor(value) && (
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                  }}
+                >
+                  ?
+                </Box>
+              )}
+            </Box>
           ),
           endAdornment: (
             <InputAdornment position="end">
@@ -59,8 +82,8 @@ const ColorPicker: React.FC<{
             </InputAdornment>
           ),
         }}
-        onClick={handleClick}
-        inputProps={{ readOnly: true, sx: { cursor: 'pointer' } }}
+        onChange={handleInputChange}
+        inputProps={{ sx: { cursor: 'text' } }}
       />
 
       <Popover
@@ -72,7 +95,7 @@ const ColorPicker: React.FC<{
           horizontal: 'left',
         }}
       >
-        <SketchPicker color={value} onChange={handleChange} />
+        <SketchPicker color={value} onChange={handlePickerChange} />
       </Popover>
     </Box>
   );

@@ -1,5 +1,4 @@
 import ColorPicker from '../components/core/ColorPicker';
-import Select from '../components/core/Select';
 import TextField from '../components/core/TextField';
 import InputConfig from '../models/InputConfig';
 
@@ -9,23 +8,16 @@ const simpleConfigs: InputConfig[] = [
     name: 'Button Color',
     Component: ColorPicker,
     props: {
-      placeholder: 'Pick the color',
-      defaultValue: '#ffffff',
+      placeholder: `Pick a color or type (e.g., 'red', '#fff', 'dark blue')`,
     },
     validate: (value: string) => (value ? '' : 'Color is required'),
   },
   {
     id: 'simple-size',
     name: 'Button Size',
-    Component: Select,
+    Component: TextField,
     props: {
-      defaultValue: 'medium',
-      placeholder: 'Select the size',
-      options: [
-        { value: 'small', label: 'Small' },
-        { value: 'medium', label: 'Medium' },
-        { value: 'Large', label: 'Large' },
-      ],
+      placeholder: `Enter size (e.g., 'large', '100px', '2rem')`,
     },
     validate: (value: string) => (value ? '' : 'Size is required'),
   },
@@ -34,7 +26,7 @@ const simpleConfigs: InputConfig[] = [
     name: 'Button Text',
     Component: TextField,
     props: {
-      placeholder: 'Enter the text',
+      placeholder: 'Enter button text',
     },
     validate: (value: string) => (value.trim() ? '' : 'Text is required'),
   },

@@ -40,8 +40,10 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
     setErrorMessage(null);
 
     const inputs = inputsConfigs[mode]
-      .map((input) => `${input.name}: ${values[input.id]}`)
-      .join('\n');
+      .map((input) => `- ${input.name}: ${values[input.id]}`)
+      .join(' ')
+      .replace(/\s+/g, ' ')
+      .trim();
 
     try {
       const response = await generateButtonWithAI(inputs);
