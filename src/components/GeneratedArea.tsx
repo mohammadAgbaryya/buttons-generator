@@ -35,7 +35,7 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({
     background: '#fff',
   };
 
-  const formattedCode = generatedHTML ? formatHTML(generatedHTML) : '';
+  const formattedCode = formatHTML(generatedHTML);
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

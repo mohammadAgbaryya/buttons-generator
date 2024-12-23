@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { sanitizeInput } from '.';
 import { OPENAI_API_KEY, OPENAI_ENDPOINT } from '../consts/env';
 import GPT4_SYSTEM_PROMPT from '../consts/gpt4SystemPrompt';
+import { sanitizeInput } from './security';
 
 const generateButtonWithAI = async (inputs: string): Promise<string> => {
   const messages = [

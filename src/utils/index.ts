@@ -1,14 +1,12 @@
-import DOMPurify from 'dompurify';
 import beautify from 'js-beautify';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import InputConfig from '../models/InputConfig';
-
-export const sanitizeInput = (input: string): string => {
-  return DOMPurify.sanitize(input);
-};
+import { hasOnlyAllowedChars } from './security';
 
 export const formatHTML = (html: string): string => {
+  if (!html) return '';
+
   return beautify.html(html, {
     indent_size: 2,
     wrap_line_length: 80,
@@ -30,8 +28,20 @@ export const getInitialValues = (
   return initialValues;
 };
 
-export const isValidColor = (color: string) => {
+export const isValidColor = (color: string): boolean => {
   const s = new Option().style;
   s.color = color;
   return s.color !== '';
+};
+
+export const validateInput = (inputName: string, value?: string): string => {
+  if (!value || value.trim() === '') {
+    return `${inputName} is required!`;
+  }
+
+  if (!hasOnlyAllowedChars(value)) {
+    return `${inputName} contains unallowed characters.`;
+  }
+
+  return '';
 };

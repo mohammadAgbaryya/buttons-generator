@@ -1,10 +1,10 @@
 import axios from 'axios';
 import generateButtonWithAI from '../../../src/utils/openai';
-import { sanitizeInput } from '../../../src/utils';
+import { sanitizeInput } from '../../../src/utils/security';
 
 jest.mock('axios');
 
-jest.mock('../../../src/utils', () => ({
+jest.mock('../../../src/utils/security', () => ({
   sanitizeInput: jest.fn((input) => input),
 }));
 

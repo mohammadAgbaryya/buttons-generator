@@ -1,10 +1,11 @@
 import Select from '../components/core/Select';
 import TextField from '../components/core/TextField';
 import InputConfig from '../models/InputConfig';
+import { validateInput } from '../utils';
 
 const advancedConfigs: InputConfig[] = [
   {
-    id: 'advanced-style',
+    id: 'theme-style',
     name: 'Button Style',
     Component: Select,
     props: {
@@ -16,16 +17,16 @@ const advancedConfigs: InputConfig[] = [
         { value: 'cute', label: 'Cute' },
       ],
     },
-    validate: (value: string) => (value ? '' : 'Style is required'),
+    validate: (value: string) => validateInput('Style', value),
   },
   {
-    id: 'advanced-text',
+    id: 'theme-text',
     name: 'Button Text',
     Component: TextField,
     props: {
       placeholder: 'Enter button text',
     },
-    validate: (value: string) => (value ? '' : 'Text is required'),
+    validate: (value: string) => validateInput('Text', value),
   },
 ];
 
