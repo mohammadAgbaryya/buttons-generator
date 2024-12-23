@@ -14,9 +14,40 @@ A dynamic and interactive React app powered by OpenAI that generates styled HTML
 ![Functions](./coverage-badges/badge-functions.svg)
 ![Lines](./coverage-badges/badge-lines.svg)
 
+## Demo Video
+
+https://drive.google.com/file/d/1ysqR5ctgWUIl1o4X20_Ady5BWTjqAf2B/view?usp=sharing
+
 ## 🛠️ Tech Stack
 
-**Vite** · **TypeScript** · **React 18** · **MUI 6** · **Axios** · **DOMPurify** · **js-beautify** · **PrismJS** · **react-color** · **Jest** · **ESLint** · **Prettier** · **Husky** · **GitHub Actions** · **Functional Programming** · **Composable Design**
+**Vite** · **TypeScript** · **React 18** · **MUI 6** · **Axios** · **DOMPurify** · **js-beautify** · **PrismJS** · **react-color** · **Jest** · **ESLint** · **Prettier** · **Husky** · **GitHub Actions** · **Functional Programming** · **Composable Design** · **GPT-4**
+
+## 🖱️ Features
+
+- **✨ Modern, User-Friendly Design**  
+  A sleek, interactive interface offering a clean and intuitive user experience across all devices.
+
+- **🔄 Dual Button Generators**
+
+  - **Basic Generator**: Customizes buttons with inputs for color (supports color picking and text), size, and content.
+  - **Themed Generator**: Includes a dropdown for predefined styles (e.g., "minimal," "modern") and free text for button labels.
+
+- **👀 Preview and Code View**  
+  Displays the generated button and its HTML/CSS code for easy integration.
+
+- **📱 Responsive Design**  
+  Works seamlessly on mobile, tablet, and desktop devices.
+
+- **🔒 Security Measures**
+
+  - Filters harmful characters from inputs.
+  - Sanitizes API-generated HTML.
+
+- **🔧 Scalable Architecture**  
+  Designed to easily support future components and features.
+
+- **📐 Edge Case Handling**  
+  Handles vague inputs like "very dark" colors or "super huge" sizes intelligently.
 
 ## 🚀 How to Use
 
@@ -31,6 +62,12 @@ A dynamic and interactive React app powered by OpenAI that generates styled HTML
   ```bash
   cd buttons-generator
   npm install
+  ```
+
+- Create a .env file in the root directory with the following content:
+
+  ```bash
+  VITE_OPENAI_API_KEY=your_open_ai_api_key
   ```
 
 - Start the development server:

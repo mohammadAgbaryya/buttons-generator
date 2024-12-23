@@ -8,6 +8,8 @@ import InputFields from './InputFields';
 import GeneratedArea from './GeneratedArea';
 import Mode from '../models/Mode';
 import ToggleGroup from './core/ToggleGroup';
+import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
+import SettingsInputSvideoIcon from '@mui/icons-material/SettingsInputSvideo';
 
 const ButtonGenerator: React.FC = () => {
   const {
@@ -40,8 +42,16 @@ const ButtonGenerator: React.FC = () => {
           <ToggleGroup
             value={mode}
             options={[
-              { value: Mode.BASIC, label: 'Basic Generator' },
-              { value: Mode.THEME, label: 'Theme Generator' },
+              {
+                value: Mode.BASIC,
+                label: 'Basic Generator',
+                icon: <SettingsBrightnessIcon sx={{ mr: 1 }} />,
+              },
+              {
+                value: Mode.THEME,
+                label: 'Theme Generator',
+                icon: <SettingsInputSvideoIcon sx={{ mr: 1 }} />,
+              },
             ]}
             onChange={(newValue) => setMode(newValue as Mode)}
           />

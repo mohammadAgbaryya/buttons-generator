@@ -7,6 +7,8 @@ import ToggleButtonGroup, {
 type ToggleOption = {
   value: string;
   label: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon?: any;
 };
 
 type ToggleGroupProps = {
@@ -32,10 +34,10 @@ const ToggleGroup: React.FC<ToggleGroupProps> = ({
       }}
       {...rest}
     >
-      {options.map((option) => (
+      {options.map(({ value, label, icon }) => (
         <ToggleButton
-          key={option.value}
-          value={option.value}
+          key={value}
+          value={value}
           sx={{
             textTransform: 'none',
             background: '#fff',
@@ -48,7 +50,7 @@ const ToggleGroup: React.FC<ToggleGroupProps> = ({
             },
           }}
         >
-          {option.label}
+          {icon} {label}
         </ToggleButton>
       ))}
     </ToggleButtonGroup>

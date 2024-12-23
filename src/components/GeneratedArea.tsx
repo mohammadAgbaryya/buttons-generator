@@ -6,6 +6,8 @@ import ToggleGroup from './core/ToggleGroup';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { formatHTML, highlightCode } from '../utils';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import CodeIcon from '@mui/icons-material/Code';
 
 type GeneratedAreaProps = {
   loading: boolean;
@@ -42,8 +44,16 @@ const GeneratedArea: React.FC<GeneratedAreaProps> = ({
       <ToggleGroup
         value={view}
         options={[
-          { value: View.UI, label: 'Show UI' },
-          { value: View.CODE, label: 'Show Code' },
+          {
+            value: View.UI,
+            label: 'Preview',
+            icon: <VisibilityIcon sx={{ mr: 1 }} />,
+          },
+          {
+            value: View.CODE,
+            label: 'Code',
+            icon: <CodeIcon sx={{ mr: 1 }} />,
+          },
         ]}
         onChange={(newView) => setView(newView as View)}
       />
