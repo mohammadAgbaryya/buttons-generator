@@ -55,9 +55,11 @@ You can access the deployed app directly on GitHub Pages using this link: [**Liv
 - **Multi-Language Support**: Add support for multiple languages to make the app usable for a global audience.
 - **Security Measures**: Implement filters to handle vague or potentially harmful inputs more effectively.
 
-## 🤝 Contributing
+## 🚨 Important Notes
 
-At the moment, this project is not open for external contributions. However, we welcome your ideas and suggestions to improve the app!
+- This repository contains only the client-side code. It is designed this way for simplicity and faster deployment using GitHub Pages, as no server is required.
+
+- While the app functions effectively, for enhanced security and better control over input validation and other server-side processes, implementing a middleware server (e.g., a Backend-for-Frontend [BFF] or proxy) would be an excellent addition. This approach would provide extra layers of security and handle server-related tasks more robustly.
 
 ## 📧 Contact
 
