@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       }}
     >
       <Typography variant="body1">
-        © {currentYear} - All rights reserved!
+        © {currentYear} - Mohammad Agbaryya
       </Typography>
     </Box>
   );

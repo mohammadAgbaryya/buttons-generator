@@ -6,13 +6,13 @@ import { getInitialValues } from '../utils';
 
 const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
   const [mode, setMode] = useState(Mode.BASIC);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [generatedHTML, setGeneratedHTML] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const [values, setValues] = useState<Record<string, string>>(
     getInitialValues(inputsConfigs[Mode.BASIC])
   );
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isLoading, setIsLoading] = useState(false);
-  const [generatedHTML, setGeneratedHTML] = useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleInputChange = (id: string, value: string): void => {
     setValues((prev) => ({ ...prev, [id]: value }));
@@ -37,7 +37,7 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
     if (!isValid()) return;
 
     setIsLoading(true);
-    setErrorMessage(null);
+    setErrorMessage('');
 
     const inputs = inputsConfigs[mode]
       .map((input) => `- ${input.name}: ${values[input.id]}`)
@@ -62,7 +62,7 @@ const useButtonGenerator = (inputsConfigs: Record<string, InputConfig[]>) => {
     setMode(newMode);
     setValues(getInitialValues(inputsConfigs[newMode]));
     setErrors({});
-    setErrorMessage(null);
+    setErrorMessage('');
   };
 
   return {

@@ -13,7 +13,7 @@ const ColorPicker: React.FC<{
   value: string;
   onChange: (event: { target: { value: string } }) => void;
   placeholder?: string;
-}> = ({ id, value, onChange, placeholder }) => {
+}> = ({ id, value, onChange, placeholder, ...rest }) => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const handleClick = (
@@ -28,10 +28,6 @@ const ColorPicker: React.FC<{
 
   const handlePickerChange = (color: { hex: string }) => {
     onChange({ target: { value: color.hex } });
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange({ target: { value: event.target.value } });
   };
 
   const open = Boolean(anchorEl);
@@ -82,8 +78,9 @@ const ColorPicker: React.FC<{
             </InputAdornment>
           ),
         }}
-        onChange={handleInputChange}
+        onChange={onChange}
         inputProps={{ sx: { cursor: 'text' } }}
+        {...rest}
       />
 
       <Popover

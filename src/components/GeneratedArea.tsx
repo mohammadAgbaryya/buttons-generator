@@ -9,8 +9,8 @@ import { formatHTML, highlightCode } from '../utils';
 
 type GeneratedAreaProps = {
   loading: boolean;
-  generatedHTML: string | null;
-  errorMessage: string | null;
+  generatedHTML: string;
+  errorMessage: string;
 };
 
 enum View {
